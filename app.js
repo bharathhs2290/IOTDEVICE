@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/iot');
-var PORT = process.env.PORT || 3000;
+//mongoose.connect('mongodb://localhost/iot');
+mongoose.connect('mongodb://root:Zomas4idys@apollo.modulusmongo.net:27017/vE9quzej?autoReconnect=true&connectTimeoutMS=60000');
 
 
 var routes = require('./routes/index');
@@ -63,21 +63,22 @@ var iod =mongoose.model('cat',ioDeviceSchema);
 //
 //});
 
-//iod.create({
-//
-//  devID:"N8237",
-//  temp:58,
-//  swtchState:false
-//
-//},function(err,cat){
-// if(err){
-//   console.log(err);
-// }
-//  else{
-//   console.log(cat);
-// }
-//
-//});
+iod.create({
+
+  devID:"N8237",
+  temp:58,
+  swtchState:false,
+  serialno:5
+
+},function(err,cat){
+ if(err){
+   console.log(err);
+ }
+  else{
+   console.log(cat);
+ }
+
+});
 
 
 //iod.find({},function(err,data){
@@ -210,7 +211,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(PORT);
+
 
 
 

@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/iot');
-mongoose.connect('mongodb://root:Zomas4idys@apollo.modulusmongo.net:27017/vE9quzej?autoReconnect=true&connectTimeoutMS=60000');
-
+//mongoose.connect('mongodb://root:Zomas4idys@apollo.modulusmongo.net:27017/vE9quzej?autoReconnect=true&connectTimeoutMS=60000');
+mongoose.connect('mongodb://clobous:123@ds037415.mongolab.com:37415/hsmongo');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

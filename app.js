@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/iot');
-
+var PORT = process.env.PORT || 3000;
 
 
 var routes = require('./routes/index');
@@ -210,7 +210,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+app.listen(PORT);
 
 
 
